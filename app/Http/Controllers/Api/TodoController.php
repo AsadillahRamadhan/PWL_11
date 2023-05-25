@@ -48,9 +48,6 @@ class TodoController extends Controller
         return $this->apiSuccess($todo->load('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Todo $todo)
     {
         $request->validated();
@@ -61,9 +58,6 @@ class TodoController extends Controller
         return $this->apiSuccess($todo->load('user'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Todo $todo)
     {
         if(auth()->user()->id == $todo->user_id){
